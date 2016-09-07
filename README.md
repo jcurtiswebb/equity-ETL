@@ -18,6 +18,7 @@ RELEASE 1 (9/26/2016)
   Feature 2 : SSIS Project for ETL of pystock data
   Feature 3 : SSRS Report graphing daily price moves
   SSIS package deployment to SQL Server 
+
   
 -SPRINT 2 (9/19/2016)
   Feature 1 : C# Yahoo Finance Data Acquisition for index
