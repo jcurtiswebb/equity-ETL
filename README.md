@@ -11,23 +11,23 @@ SQL Server 2014 or newer
 Visual Stuidio 2012 or newer
 
 
-RELEASE 1 (9/26/2016)
+<b>RELEASE 1 (9/26/2016)</b><br>
 
--SPRINT 1 (9/12/2016)
-  Feature 1 : Creation of underlying table structure
-  Feature 2 : SSIS Project for ETL of pystock data
-  Feature 3 : SSRS Report graphing daily price moves
-  SSIS package deployment to SQL Server 
+-SPRINT 1 (9/12/2016)<br>
+  Feature 1 : Creation of underlying table structure<br>
+  Feature 2 : SSIS Project for ETL of pystock data<br>
+  Feature 3 : SSRS Report graphing daily price moves<br>
+  SSIS package deployment to SQL Server <br>
 
   
--SPRINT 2 (9/19/2016)
-  Feature 1 : C# Yahoo Finance Data Acquisition for index
-  Feature 2 : SSRS Report graphing performance vs index
-  Feature 3 : SSRS Report graphing dividend growth
-  Feature 4 : SSRS Report showing undervalued or overvalued for individual equity
+-SPRINT 2 (9/19/2016)<br>
+  Feature 1 : C# Yahoo Finance Data Acquisition for index<br>
+  Feature 2 : SSRS Report graphing performance vs index<br>
+  Feature 3 : SSRS Report graphing dividend growth<br>
+  Feature 4 : SSRS Report showing undervalued or overvalued for individual equity<br>
   
--SPRINT 3 (9/26/2016)
-  Feature 1 : SSRS Report graphing earnings growth
-  Feature 2 : SSRS Report graphing revenue growth
+-SPRINT 3 (9/26/2016)<br>
+  Feature 1 : SSRS Report graphing earnings growth<br>
+  Feature 2 : SSRS Report graphing revenue growth<br>
 
 
