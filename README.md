@@ -8,7 +8,7 @@ Requirements:
 
 SQL Server 2014 or newer
 
-Visual Stuidio 2012 or newer
+Visual Studio 2012 or newer
 
 
 <b>RELEASE 1 (9/26/2016)</b><br>
