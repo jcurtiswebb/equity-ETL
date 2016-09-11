@@ -62,7 +62,7 @@ CREATE TABLE dbo.factReport
 	yearID TINYINT FOREIGN KEY REFERENCES dbo.dimYear(yearID) NOT NULL,
 	amend BIT NOT NULL,
 	repType BIT NOT NULL,
-	[quarter] TINYINT NULL,
+	[quarter] VARCHAR(2) NULL,
 	revenues BIGINT null,	
 	opIncome BIGINT null,	
 	netIncome	BIGINT null,

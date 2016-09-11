@@ -26,14 +26,11 @@
           <SSIS:Property SSIS:Name="CreatorComputerName">JOSH-PC</SSIS:Property>
           <SSIS:Property SSIS:Name="Description">
           </SSIS:Property>
-          <SSIS:Property SSIS:Name="PasswordVerifier" SSIS:Sensitive="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAATdqzealXl0ahW81D4U/e7wAAAAACAAAAAAAQZgAAAAEAACAAAAAo5Ch01z56q8NGGsq4uyFfyNex4hVJymYcGk5BXYPaLwAAAAAOgAAAAAIAACAAAAD0FYFAJ6Rpol7jeJRj+Vby+NDf8c3zJiFt1fxDaIk1MpAAAADItrWMdsB0/BJ186Ni94uid4/tFCi2rLkA06W9BpRsW9m2nSyLT69sWflkOO0dMZcwrOAm0MNtTo/4IYql3c17lQW5oTVx+xJKRBgNxRWVwnehRSPtwD7h7cu3mVUolKUey0gtDcwK+rL51Z4eaUZKQMUqcFll+NLrQ4D3io7u2lP5VEcjsS6oNYdCYLpKkgVAAAAAgUIGwXxN8Bfa7+9Kdb3gNLPYnOhbo2ERg0cLI02N/7HybSxiovVjINW5DPdTMDcNcZoSRNcIeN47v0R1NaNiag==</SSIS:Property>
+          <SSIS:Property SSIS:Name="PasswordVerifier" SSIS:Sensitive="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAATdqzealXl0ahW81D4U/e7wAAAAACAAAAAAAQZgAAAAEAACAAAABuNU+oEMaUlUlE+6O+/z3HOIZmIaKS84n/pH2vcW2NKQAAAAAOgAAAAAIAACAAAADmEJcdolft038botqea6Vk72xfSWu4q78GZ/SSQZoJ6pAAAADyeLvA+Q1mI1Xjbuzs6yw+1NIBq07qYUa4nfSKYwGi2ty3bwUT4srjrFybB+9QKvjWclHU7LK/CNiJH3nSADY51QSB26dLSWbfiweVe4JB5R6i55pnZkZxY1RNju6ch/fWXApS66g/UEMpEe76xpzIDelxglNchHLYa4U2YckxEmyZzn/EAGvAZpR1ZX0hZpxAAAAAd6Z4/fP74+IgmSUMRBsay+uXvMQLshYuY/vKaUPZiodg/aPWO6WYLqfz/UbzI4Id0ksqmHa0rulcwJtOBmLiTQ==</SSIS:Property>
           <SSIS:Property SSIS:Name="FormatVersion">1</SSIS:Property>
         </SSIS:Properties>
         <SSIS:Packages>
-          <SSIS:Package SSIS:Name="Package.dtsx" SSIS:EntryPoint="1" />
-          <SSIS:Package SSIS:Name="Tests.dtsx" SSIS:EntryPoint="1" />
-          <SSIS:Package SSIS:Name="SymbolFileLoop.dtsx" SSIS:EntryPoint="1" />
-          <SSIS:Package SSIS:Name="SymbolLoopWithFileName.dtsx" SSIS:EntryPoint="1" />
+          <SSIS:Package SSIS:Name="pystock-load.dtsx" SSIS:EntryPoint="1" />
         </SSIS:Packages>
         <SSIS:ConnectionManagers>
           <SSIS:ConnectionManager SSIS:Name="JOSH-PC_SQL16.YahooFinData.conmgr" />
@@ -313,50 +310,16 @@
             </SSIS:Parameter>
           </SSIS:ProjectConnectionParameters>
           <SSIS:PackageInfo>
-            <SSIS:PackageMetaData SSIS:Name="Package.dtsx">
+            <SSIS:PackageMetaData SSIS:Name="pystock-load.dtsx">
               <SSIS:Properties>
-                <SSIS:Property SSIS:Name="ID">{3D8DB50D-C9A1-4EA6-A2D7-CA35831570CF}</SSIS:Property>
-                <SSIS:Property SSIS:Name="Name">Package</SSIS:Property>
+                <SSIS:Property SSIS:Name="ID">{DCD6F0DC-5C33-4C49-B1A6-57ED9348BAD5}</SSIS:Property>
+                <SSIS:Property SSIS:Name="Name">pystock-load</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMajor">1</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMinor">0</SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionBuild">5</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionBuild">31</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionComments">
                 </SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionGUID">{B93020B5-E946-45F5-B053-07A64B10C6C9}</SSIS:Property>
-                <SSIS:Property SSIS:Name="PackageFormatVersion">8</SSIS:Property>
-                <SSIS:Property SSIS:Name="Description">
-                </SSIS:Property>
-                <SSIS:Property SSIS:Name="ProtectionLevel">1</SSIS:Property>
-              </SSIS:Properties>
-              <SSIS:Parameters />
-            </SSIS:PackageMetaData>
-            <SSIS:PackageMetaData SSIS:Name="Tests.dtsx">
-              <SSIS:Properties>
-                <SSIS:Property SSIS:Name="ID">{79056E3F-F118-4A58-9ED4-3AF42FDDA153}</SSIS:Property>
-                <SSIS:Property SSIS:Name="Name">Tests</SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionMajor">1</SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionMinor">0</SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionBuild">3</SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionComments">
-                </SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionGUID">{C8FAD073-BC34-412A-9D90-58C1F577996F}</SSIS:Property>
-                <SSIS:Property SSIS:Name="PackageFormatVersion">8</SSIS:Property>
-                <SSIS:Property SSIS:Name="Description">
-                </SSIS:Property>
-                <SSIS:Property SSIS:Name="ProtectionLevel">1</SSIS:Property>
-              </SSIS:Properties>
-              <SSIS:Parameters />
-            </SSIS:PackageMetaData>
-            <SSIS:PackageMetaData SSIS:Name="SymbolFileLoop.dtsx">
-              <SSIS:Properties>
-                <SSIS:Property SSIS:Name="ID">{F7C60AAC-33CC-4048-B986-74331BD70A42}</SSIS:Property>
-                <SSIS:Property SSIS:Name="Name">SymbolFileLoop</SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionMajor">1</SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionMinor">0</SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionBuild">28</SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionComments">
-                </SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionGUID">{C8FC14AC-DBE2-4594-B28B-D148AF1A44FE}</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionGUID">{3D0C59F5-7D6C-49D2-9747-AED7B49D48E0}</SSIS:Property>
                 <SSIS:Property SSIS:Name="PackageFormatVersion">8</SSIS:Property>
                 <SSIS:Property SSIS:Name="Description">
                 </SSIS:Property>
@@ -1047,23 +1010,6 @@
                   </SSIS:Properties>
                 </SSIS:Parameter>
               </SSIS:Parameters>
-            </SSIS:PackageMetaData>
-            <SSIS:PackageMetaData SSIS:Name="SymbolLoopWithFileName.dtsx">
-              <SSIS:Properties>
-                <SSIS:Property SSIS:Name="ID">{15A97609-EA65-4CAE-AEBE-237F670EC6C1}</SSIS:Property>
-                <SSIS:Property SSIS:Name="Name">SymbolLoopWithFileName</SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionMajor">1</SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionMinor">0</SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionBuild">2</SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionComments">
-                </SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionGUID">{00838896-C4B2-4803-93A2-A5004BF6684F}</SSIS:Property>
-                <SSIS:Property SSIS:Name="PackageFormatVersion">8</SSIS:Property>
-                <SSIS:Property SSIS:Name="Description">
-                </SSIS:Property>
-                <SSIS:Property SSIS:Name="ProtectionLevel">1</SSIS:Property>
-              </SSIS:Properties>
-              <SSIS:Parameters />
             </SSIS:PackageMetaData>
           </SSIS:PackageInfo>
         </SSIS:DeploymentInfo>
