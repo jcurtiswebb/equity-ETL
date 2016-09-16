@@ -2,13 +2,18 @@
 <BuildLog xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <ProjectInfo>
     <Name>equityDataETL</Name>
-    <LastWriteTime>2016-09-10T02:05:27.7229076Z</LastWriteTime>
+    <LastWriteTime>2016-09-16T17:55:01.3150771Z</LastWriteTime>
     <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
   </ProjectInfo>
   <LastBuildInfos>
     <ProjectBuildItemInfo>
       <Name>pystock-load.dtsx</Name>
-      <LastWriteTime>2016-09-10T12:55:21.1189231Z</LastWriteTime>
+      <LastWriteTime>2016-09-16T15:52:06.5956818Z</LastWriteTime>
+      <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
+    </ProjectBuildItemInfo>
+    <ProjectBuildItemInfo>
+      <Name>yahooDataLoad.dtsx</Name>
+      <LastWriteTime>2016-09-16T18:11:14.5609025Z</LastWriteTime>
       <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
     </ProjectBuildItemInfo>
   </LastBuildInfos>

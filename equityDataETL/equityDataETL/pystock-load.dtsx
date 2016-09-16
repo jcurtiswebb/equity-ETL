@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="pystock-load"
   DTS:PackageType="5"
-  DTS:VersionBuild="31"
-  DTS:VersionGUID="{3D0C59F5-7D6C-49D2-9747-AED7B49D48E0}">
+  DTS:VersionBuild="39"
+  DTS:VersionGUID="{2787A6D0-792B-4DE7-AB4F-64375989D5AB}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -907,7 +907,7 @@
                     <property
                       dataType="System.String"
                       description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
-                      name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                      name="FastLoadOptions">TABLOCK</property>
                     <property
                       dataType="System.Int32"
                       description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
@@ -925,7 +925,7 @@
                     <input
                       refId="Package\For Each Prices File\prices csv to sql tbl\insert into factprice.Inputs[OLE DB Destination Input]"
                       errorOrTruncationOperation="Insert"
-                      errorRowDisposition="FailComponent"
+                      errorRowDisposition="IgnoreFailure"
                       hasSideEffects="true"
                       name="OLE DB Destination Input">
                       <inputColumns>
@@ -4043,7 +4043,9 @@ where [refTable].[symbol] = ?</property>
                           name="repType" />
                         <externalMetadataColumn
                           refId="Package\Foreach Loop Container\reports csv to sql tbl\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[quarter]"
-                          dataType="ui1"
+                          codePage="1252"
+                          dataType="str"
+                          length="2"
                           name="quarter" />
                         <externalMetadataColumn
                           refId="Package\Foreach Loop Container\reports csv to sql tbl\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[revenues]"
@@ -6546,7 +6548,7 @@ where [refTable].[symbol] = ?</property>
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Constraint 1]"
       DTS:CreationName=""
-      DTS:DTSID="{99212098-2408-4B47-808A-26DEFFA6ACA5}"
+      DTS:DTSID="{C89C3963-51EE-4E63-89B8-8A8FA34C98A0}"
       DTS:From="Package\For Each Prices File"
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint 1"
@@ -6574,7 +6576,7 @@ where [refTable].[symbol] = ?</property>
           PanelSize="220,57"
           Size="220,100"
           Id="Package\For Each Prices File"
-          TopLeft="166,184" />
+          TopLeft="436.416666666667,46.5" />
         <NodeLayout
           Size="183,42"
           Id="Package\For Each Symbols File\symbols txt to SQL tbl"
@@ -6585,7 +6587,7 @@ where [refTable].[symbol] = ?</property>
           PanelSize="209,77"
           Size="209,120"
           Id="Package\For Each Symbols File"
-          TopLeft="167.5,27.5" />
+          TopLeft="166.25,30" />
         <NodeLayout
           Size="175,42"
           Id="Package\Foreach Loop Container\reports csv to sql tbl"
@@ -6596,21 +6598,21 @@ where [refTable].[symbol] = ?</property>
           PanelSize="222,99"
           Size="222,142"
           Id="Package\Foreach Loop Container"
-          TopLeft="170,331" />
+          TopLeft="428.333333333333,193.5" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint]"
-          TopLeft="274,147.5">
+          TopLeft="375.25,93.25">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,36.5"
+              EndConnector="61.1666666666669,0"
               Start="0,0"
-              End="0,29">
+              End="53.6666666666669,0">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,29" />
+                    End="53.6666666666669,0" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -6621,7 +6623,7 @@ where [refTable].[symbol] = ?</property>
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 1]"
-          TopLeft="278.5,284">
+          TopLeft="542.875,146.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -6650,55 +6652,45 @@ where [refTable].[symbol] = ?</property>
       <GraphLayout
         Capacity="32" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
+          Size="136,42"
+          Id="Package\For Each Prices File\prices csv to sql tbl\date sort tbl"
+          TopLeft="508.888888888889,275.555555555556" />
+        <NodeLayout
+          Size="138,42"
+          Id="Package\For Each Prices File\prices csv to sql tbl\date sort file"
+          TopLeft="297.777777777778,272.222222222222" />
+        <NodeLayout
           Size="159,42"
           Id="Package\For Each Prices File\prices csv to sql tbl\prices csv source"
           TopLeft="188.222222222222,31.8888888888889" />
-        <NodeLayout
-          Size="151,42"
-          Id="Package\For Each Prices File\prices csv to sql tbl\symbol sort file"
-          TopLeft="206.555555555556,109.777777777778" />
-        <EdgeLayout
-          Id="Package\For Each Prices File\prices csv to sql tbl.Paths[Flat File Source Output]"
-          TopLeft="292.888888888889,73.8888888888889">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-10.8333333333333,35.8888888888889"
-              Start="0,0"
-              End="-10.8333333333333,28.3888888888889">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,10.5700844057008" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,10.5700844057008"
-                    Point2="0,14.5700844057008"
-                    Point3="-4,14.5700844057008" />
-                  <mssgle:LineSegment
-                    End="-6.83333333333326,14.5700844057008" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-6.83333333333326,14.5700844057008"
-                    Point2="-10.8333333333333,14.5700844057008"
-                    Point3="-10.8333333333333,18.5700844057008" />
-                  <mssgle:LineSegment
-                    End="-10.8333333333333,28.3888888888889" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
         <NodeLayout
           Size="173,42"
           Id="Package\For Each Prices File\prices csv to sql tbl\symbol table source"
           TopLeft="371.333333333333,32" />
         <NodeLayout
+          Size="160,42"
+          Id="Package\For Each Prices File\prices csv to sql tbl\date table source"
+          TopLeft="482.222222222222,206.666666666667" />
+        <NodeLayout
+          Size="153,42"
+          Id="Package\For Each Prices File\prices csv to sql tbl\merge join date"
+          TopLeft="387.777777777778,358.888888888889" />
+        <NodeLayout
+          Size="158,42"
+          Id="Package\For Each Prices File\prices csv to sql tbl\Prices error rows"
+          TopLeft="78.8888888888889,254.444444444444" />
+        <NodeLayout
+          Size="151,42"
+          Id="Package\For Each Prices File\prices csv to sql tbl\symbol sort file"
+          TopLeft="206.555555555556,109.777777777778" />
+        <NodeLayout
           Size="166,42"
           Id="Package\For Each Prices File\prices csv to sql tbl\merge join symbol"
           TopLeft="282.333333333333,203" />
+        <NodeLayout
+          Size="149,42"
+          Id="Package\For Each Prices File\prices csv to sql tbl\symbol sort tbl"
+          TopLeft="393.333333333333,103" />
         <EdgeLayout
           Id="Package\For Each Prices File\prices csv to sql tbl.Paths[Sort Output]"
           TopLeft="282.055555555556,151.777777777778">
@@ -6733,10 +6725,40 @@ where [refTable].[symbol] = ?</property>
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="149,42"
-          Id="Package\For Each Prices File\prices csv to sql tbl\symbol sort tbl"
-          TopLeft="393.333333333333,103" />
+        <EdgeLayout
+          Id="Package\For Each Prices File\prices csv to sql tbl.Paths[OLE DB Source Output1]"
+          TopLeft="562.222222222222,248.666666666667">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="14.6666666666667,26.8888888888889"
+              Start="0,0"
+              End="14.6666666666667,19.3888888888889">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,9.44444444444443" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,9.44444444444443"
+                    Point2="0,13.4444444444444"
+                    Point3="4,13.4444444444444" />
+                  <mssgle:LineSegment
+                    End="10.6666666666667,13.4444444444444" />
+                  <mssgle:CubicBezierSegment
+                    Point1="10.6666666666667,13.4444444444444"
+                    Point2="14.6666666666667,13.4444444444444"
+                    Point3="14.6666666666667,17.4444444444444" />
+                  <mssgle:LineSegment
+                    End="14.6666666666667,19.3888888888889" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
         <EdgeLayout
           Id="Package\For Each Prices File\prices csv to sql tbl.Paths[OLE DB Source Output]"
           TopLeft="457.833333333333,74">
@@ -6763,6 +6785,166 @@ where [refTable].[symbol] = ?</property>
                     Point3="10,18.5" />
                   <mssgle:LineSegment
                     End="10,21.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\For Each Prices File\prices csv to sql tbl.Paths[Merge Join Output]"
+          TopLeft="366.055555555556,245">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,27.2222222222222"
+              Start="0,0"
+              End="0,19.7222222222222">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,19.7222222222222" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\For Each Prices File\prices csv to sql tbl.Paths[Flat File Source Output]"
+          TopLeft="292.888888888889,73.8888888888889">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-10.8333333333333,35.8888888888889"
+              Start="0,0"
+              End="-10.8333333333333,28.3888888888889">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,10.5700844057008" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,10.5700844057008"
+                    Point2="0,14.5700844057008"
+                    Point3="-4,14.5700844057008" />
+                  <mssgle:LineSegment
+                    End="-6.83333333333326,14.5700844057008" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-6.83333333333326,14.5700844057008"
+                    Point2="-10.8333333333333,14.5700844057008"
+                    Point3="-10.8333333333333,18.5700844057008" />
+                  <mssgle:LineSegment
+                    End="-10.8333333333333,28.3888888888889" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\For Each Prices File\prices csv to sql tbl.Paths[Flat File Source Error Output]"
+          TopLeft="242.555555555555,73.8888888888889">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-84.6666666666665,180.555555555556"
+              Start="0,0"
+              End="-84.6666666666665,173.055555555556">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,69.3015082330151" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,69.3015082330151"
+                    Point2="0,73.3015082330151"
+                    Point3="-4,73.3015082330151" />
+                  <mssgle:LineSegment
+                    End="-80.6666666666665,73.3015082330151" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-80.6666666666665,73.3015082330151"
+                    Point2="-84.6666666666665,73.3015082330151"
+                    Point3="-84.6666666666665,77.3015082330151" />
+                  <mssgle:LineSegment
+                    End="-84.6666666666665,173.055555555556" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-105.959720052083,78.3015082330151,127.2527734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\For Each Prices File\prices csv to sql tbl.Paths[Sort Output3]"
+          TopLeft="576.888888888889,317.555555555556">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-88.4444444444443,41.333333333333"
+              Start="0,0"
+              End="-88.4444444444443,33.833333333333">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,20.5433376455367" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,20.5433376455367"
+                    Point2="0,24.5433376455367"
+                    Point3="-4,24.5433376455367" />
+                  <mssgle:LineSegment
+                    End="-84.4444444444443,24.5433376455367" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-84.4444444444443,24.5433376455367"
+                    Point2="-88.4444444444443,24.5433376455367"
+                    Point3="-88.4444444444443,28.5433376455367" />
+                  <mssgle:LineSegment
+                    End="-88.4444444444443,33.833333333333" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\For Each Prices File\prices csv to sql tbl.Paths[Sort Output2]"
+          TopLeft="366.777777777778,314.222222222222">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="73.3333333333333,44.666666666667"
+              Start="0,0"
+              End="73.3333333333333,37.166666666667">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,22.5226390685643" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,22.5226390685643"
+                    Point2="0,26.5226390685643"
+                    Point3="4,26.5226390685643" />
+                  <mssgle:LineSegment
+                    End="69.3333333333333,26.5226390685643" />
+                  <mssgle:CubicBezierSegment
+                    Point1="69.3333333333333,26.5226390685643"
+                    Point2="73.3333333333333,26.5226390685643"
+                    Point3="73.3333333333333,30.5226390685643" />
+                  <mssgle:LineSegment
+                    End="73.3333333333333,37.166666666667" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -6806,221 +6988,29 @@ where [refTable].[symbol] = ?</property>
           </EdgeLayout.Labels>
         </EdgeLayout>
         <NodeLayout
-          Size="138,42"
-          Id="Package\For Each Prices File\prices csv to sql tbl\date sort file"
-          TopLeft="297.777777777778,272.222222222222" />
-        <EdgeLayout
-          Id="Package\For Each Prices File\prices csv to sql tbl.Paths[Merge Join Output]"
-          TopLeft="366.055555555556,245">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,27.2222222222222"
-              Start="0,0"
-              End="0,19.7222222222222">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,19.7222222222222" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="160,42"
-          Id="Package\For Each Prices File\prices csv to sql tbl\date table source"
-          TopLeft="482.222222222222,206.666666666667" />
-        <NodeLayout
-          Size="136,42"
-          Id="Package\For Each Prices File\prices csv to sql tbl\date sort tbl"
-          TopLeft="508.888888888889,275.555555555556" />
-        <EdgeLayout
-          Id="Package\For Each Prices File\prices csv to sql tbl.Paths[OLE DB Source Output1]"
-          TopLeft="562.222222222222,248.666666666667">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="14.6666666666667,26.8888888888889"
-              Start="0,0"
-              End="14.6666666666667,19.3888888888889">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,9.44444444444443" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,9.44444444444443"
-                    Point2="0,13.4444444444444"
-                    Point3="4,13.4444444444444" />
-                  <mssgle:LineSegment
-                    End="10.6666666666667,13.4444444444444" />
-                  <mssgle:CubicBezierSegment
-                    Point1="10.6666666666667,13.4444444444444"
-                    Point2="14.6666666666667,13.4444444444444"
-                    Point3="14.6666666666667,17.4444444444444" />
-                  <mssgle:LineSegment
-                    End="14.6666666666667,19.3888888888889" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="153,42"
-          Id="Package\For Each Prices File\prices csv to sql tbl\merge join date"
-          TopLeft="387.777777777778,358.888888888889" />
-        <EdgeLayout
-          Id="Package\For Each Prices File\prices csv to sql tbl.Paths[Sort Output2]"
-          TopLeft="366.777777777778,314.222222222222">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="73.3333333333333,44.6666666666666"
-              Start="0,0"
-              End="73.3333333333333,37.1666666666666">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,22.522639068564" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,22.522639068564"
-                    Point2="0,26.522639068564"
-                    Point3="4,26.522639068564" />
-                  <mssgle:LineSegment
-                    End="69.3333333333333,26.522639068564" />
-                  <mssgle:CubicBezierSegment
-                    Point1="69.3333333333333,26.522639068564"
-                    Point2="73.3333333333333,26.522639068564"
-                    Point3="73.3333333333333,30.522639068564" />
-                  <mssgle:LineSegment
-                    End="73.3333333333333,37.1666666666666" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\For Each Prices File\prices csv to sql tbl.Paths[Sort Output3]"
-          TopLeft="576.888888888889,317.555555555556">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-88.4444444444445,41.3333333333333"
-              Start="0,0"
-              End="-88.4444444444445,33.8333333333333">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,20.5433376455369" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,20.5433376455369"
-                    Point2="0,24.5433376455369"
-                    Point3="-4,24.5433376455369" />
-                  <mssgle:LineSegment
-                    End="-84.4444444444445,24.5433376455369" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-84.4444444444445,24.5433376455369"
-                    Point2="-88.4444444444445,24.5433376455369"
-                    Point3="-88.4444444444445,28.5433376455369" />
-                  <mssgle:LineSegment
-                    End="-88.4444444444445,33.8333333333333" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
           Size="170,42"
           Id="Package\For Each Prices File\prices csv to sql tbl\insert into factprice"
-          TopLeft="367.777777777778,435.555555555556" />
+          TopLeft="376.777777777778,459.555555555556" />
         <EdgeLayout
           Id="Package\For Each Prices File\prices csv to sql tbl.Paths[Merge Join Output1]"
-          TopLeft="464.277777777778,400.888888888889">
+          TopLeft="463.027777777778,400.888888888889">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-11.4999999999999,34.6666666666667"
+              EndConnector="0,58.666666666667"
               Start="0,0"
-              End="-11.4999999999999,27.1666666666667">
+              End="0,51.166666666667">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,13.3333333333333" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,13.3333333333333"
-                    Point2="0,17.3333333333333"
-                    Point3="-4,17.3333333333333" />
-                  <mssgle:LineSegment
-                    End="-7.49999999999994,17.3333333333333" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-7.49999999999994,17.3333333333333"
-                    Point2="-11.4999999999999,17.3333333333333"
-                    Point3="-11.4999999999999,21.3333333333333" />
-                  <mssgle:LineSegment
-                    End="-11.4999999999999,27.1666666666667" />
+                    End="0,51.166666666667" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="158,42"
-          Id="Package\For Each Prices File\prices csv to sql tbl\Prices error rows"
-          TopLeft="78.8888888888889,254.444444444444" />
-        <EdgeLayout
-          Id="Package\For Each Prices File\prices csv to sql tbl.Paths[Flat File Source Error Output]"
-          TopLeft="242.555555555555,73.8888888888889">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-84.6666666666665,180.555555555556"
-              Start="0,0"
-              End="-84.6666666666665,173.055555555556">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,69.3015082330151" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,69.3015082330151"
-                    Point2="0,73.3015082330151"
-                    Point3="-4,73.3015082330151" />
-                  <mssgle:LineSegment
-                    End="-80.6666666666665,73.3015082330151" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-80.6666666666665,73.3015082330151"
-                    Point2="-84.6666666666665,73.3015082330151"
-                    Point3="-84.6666666666665,77.3015082330151" />
-                  <mssgle:LineSegment
-                    End="-84.6666666666665,173.055555555556" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-105.959720052083,78.3015082330151,127.2527734375,11.609375"
-              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>

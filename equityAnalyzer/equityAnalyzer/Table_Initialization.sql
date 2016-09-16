@@ -23,9 +23,7 @@ CREATE TABLE dbo.dimDate
 	[quarter] AS DATEPART(QUARTER, [date]) PERSISTED
 )
 
-
-
-CREATE TABLE dbo.factPrice
+CREATE TABLE stg.factPrice
 (
 	symID INT FOREIGN KEY REFERENCES dbo.dimSymbol(symID) NOT NULL,
 	dateID INT FOREIGN KEY REFERENCES dbo.dimDate(dateID) NOT NULL,
@@ -34,6 +32,18 @@ CREATE TABLE dbo.factPrice
 	adjClosePrice MONEY NOT NULL,
 	dayGain DECIMAL(9,5) NULL
 )
+
+CREATE TABLE dbo.factPrice
+(
+	symID INT FOREIGN KEY REFERENCES dbo.dimSymbol(symID) NOT NULL,
+	dateID INT FOREIGN KEY REFERENCES dbo.dimDate(dateID) NOT NULL,
+	closePrice DECIMAL(9,2) NOT NULL,
+	volume BIGINT NOT NULL,
+	adjClosePrice MONEY NOT NULL,
+	dayGain DECIMAL(9,5) NULL,
+	CONSTRAINT pk_price PRIMARY KEY (symID,dateID) WITH (IGNORE_DUP_KEY = ON)
+)
+
 
 DECLARE @startdate AS DATE = '12-31-1999'
 DECLARE @totalyears AS INT = 20;

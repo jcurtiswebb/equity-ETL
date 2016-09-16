@@ -14,9 +14,9 @@ GO
 USE YahooFinData;
 GO
 
-IF NOT EXISTS (SELECT * FROM sys.schemas WHERE name = 'prd')
+IF NOT EXISTS (SELECT * FROM sys.schemas WHERE name = 'stg')
 BEGIN
-    EXEC( 'CREATE SCHEMA prd' );
+    EXEC( 'CREATE SCHEMA stg' );
 END
 
 

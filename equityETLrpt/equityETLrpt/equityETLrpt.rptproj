@@ -15,6 +15,10 @@
   </DataSets>
   <Reports>
     <ProjectItem>
+      <Name>priceTable.rdl</Name>
+      <FullPath>priceTable.rdl</FullPath>
+    </ProjectItem>
+    <ProjectItem>
       <Name>symbolPrice.rdl</Name>
       <FullPath>symbolPrice.rdl</FullPath>
     </ProjectItem>
