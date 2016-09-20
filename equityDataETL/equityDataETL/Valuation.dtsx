@@ -1,0 +1,75 @@
+﻿<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="9/18/2016 6:54:28 PM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="JOSH-PC"
+  DTS:CreatorName="Josh-PC\Josh"
+  DTS:DTSID="{595F6C97-7787-465D-A58E-574A827421B3}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="13.0.1601.5"
+  DTS:LocaleID="1033"
+  DTS:ObjectName="Valuation"
+  DTS:PackageType="5"
+  DTS:VersionBuild="3"
+  DTS:VersionGUID="{32F1807A-6F18-406B-AC25-F39AD80D7E7A}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[SQL16]"
+      DTS:CreationName="ADO.NET:SQL"
+      DTS:DTSID="{98C226E2-597F-4C8E-AD0B-45F7310B55FB}"
+      DTS:ObjectName="SQL16">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="Data Source=JOSH-PC\SQL16;Integrated Security=SSPI;Connect Timeout=30;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:Variables />
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Execute T-SQL Statement Task"
+      DTS:CreationName="Microsoft.DbMaintenanceTSQLExecuteTask"
+      DTS:Description="Execute T-SQL Statement Task"
+      DTS:DTSID="{DA217B26-41BE-47D3-AF9C-DE39046A2AF4}"
+      DTS:ExecutableType="Microsoft.DbMaintenanceTSQLExecuteTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Execute T-SQL Statement Task"
+      DTS:TaskContact="Execute T-SQL Statement Task; Microsoft Corporation; Microsoft SQL Server v9; © 2004 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{98C226E2-597F-4C8E-AD0B-45F7310B55FB}"
+          SQLTask:SqlStatementSource="&#x9;DECLARE @rateaboveriskfree AS smallmoney = 0.08;&#xA;&#x9;DECLARE @riskfree AS smallmoney = 0.005;&#xA;&#xA;UPDATE N2&#xA;&#x9;&#x9;SET N2.Valuation = ROUND((N1.divgrowth+1),3)*ROUND(N1.dividend,3)/((@riskfree + @rateaboveriskfree)*ROUND(N1.Beta,3) - ROUND(N1.divgrowth,3))&#xA;&#x9;FROM YahooFinData.dbo.FactReport AS N2&#xA;&#x9;&#x9;INNER JOIN YahooFinData.dbo.FactReport AS N1&#xA;&#x9;&#x9;&#x9;ON N1.symID = N2.symID&#xA;&#x9;&#x9;&#x9;AND N1.yearID = N2.yearID&#xA;&#x9;&#x9;&#x9;AND N1.repType = n2.repType&#xA;&#x9;WHERE N1.repType = 1&#xA;&#x9;&#x9;AND ((@riskfree + @rateaboveriskfree)*N1.Beta - N1.divgrowth) &gt; 0"
+          SQLTask:ServerVersion="9"
+          SQLTask:ExtendedLogging="True"
+          SQLTask:LocalConnectionForLogging=""
+          SQLTask:TaskName=""
+          SQLTask:IgnoreDatabasesInNotOnlineState="False" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="8">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
+        <NodeLayout
+          Size="225,42"
+          Id="Package\Execute T-SQL Statement Task"
+          TopLeft="196,105" />
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>

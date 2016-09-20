@@ -1,0 +1,75 @@
+<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="9/18/2016 3:46:15 PM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="JOSH-PC"
+  DTS:CreatorName="Josh-PC\Josh"
+  DTS:DTSID="{90107E05-1102-46E7-93B1-7A7010B0788A}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="13.0.1601.5"
+  DTS:LocaleID="1033"
+  DTS:ObjectName="divGrowthUpdate"
+  DTS:PackageType="5"
+  DTS:VersionBuild="4"
+  DTS:VersionGUID="{2228E49E-EE40-4FFC-8793-1E7535365CE5}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[SQL16]"
+      DTS:CreationName="ADO.NET:SQL"
+      DTS:DTSID="{5ED45D6C-3089-4B9F-A4C8-1EDA618A5C7C}"
+      DTS:ObjectName="SQL16">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="Data Source=JOSH-PC\SQL16;Integrated Security=SSPI;Connect Timeout=30;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:Variables />
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Execute T-SQL Statement Task"
+      DTS:CreationName="Microsoft.DbMaintenanceTSQLExecuteTask"
+      DTS:Description="Execute T-SQL Statement Task"
+      DTS:DTSID="{675DBEAB-78E1-48D8-923C-46342AAEF9AE}"
+      DTS:ExecutableType="Microsoft.DbMaintenanceTSQLExecuteTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Execute T-SQL Statement Task"
+      DTS:TaskContact="Execute T-SQL Statement Task; Microsoft Corporation; Microsoft SQL Server v9; © 2004 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{5ED45D6C-3089-4B9F-A4C8-1EDA618A5C7C}"
+          SQLTask:SqlStatementSource="WITH T1 AS&#xA;(&#xA;&#x9;SELECT N1.symID&#xA;&#x9;, N1.repType&#xA;&#x9;, N1.yearID As Current_Year&#xA;&#x9;, N2.yearID As Prior_Year&#xA;&#x9;, N1.dividend AS Current_Dividend&#xA;&#x9;, N2.dividend AS Prior_Dividend&#xA;&#x9;FROM YahooFinData.dbo.factReport AS N1&#xA;&#x9;INNER JOIN YahooFinData.dbo.factReport AS N2 ON&#xA;&#x9;&#x9;N1.yearID = N2.yearID + 1&#xA;&#x9;&#x9;AND N1.symID = N2.symID&#xA;&#x9;WHERE N1.repType =1 AND N2.repType=1 and N1.dividend &gt; 0 AND N2.dividend &gt; 0&#xA;)&#xA;UPDATE T2&#xA;SET T2.divGrowth = ((T1.Current_Dividend/T1.Prior_dividend) - 1)&#xA;FROM YahooFinData.dbo.factReport AS T2&#xA;INNER JOIN T1&#xA;ON T1.Current_Year = T2.yearID &#xA;&#x9;AND T1.symID = T2.symID &#xA;&#x9;AND T1.repType = T2.repType;&#xA;GO"
+          SQLTask:ServerVersion="9"
+          SQLTask:ExtendedLogging="True"
+          SQLTask:LocalConnectionForLogging=""
+          SQLTask:TaskName=""
+          SQLTask:IgnoreDatabasesInNotOnlineState="False" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="8">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
+        <NodeLayout
+          Size="225,42"
+          Id="Package\Execute T-SQL Statement Task"
+          TopLeft="198,64" />
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>

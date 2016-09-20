@@ -22,6 +22,10 @@
       <Name>symbolPrice.rdl</Name>
       <FullPath>symbolPrice.rdl</FullPath>
     </ProjectItem>
+    <ProjectItem>
+      <Name>symbolVsIndex.rdl</Name>
+      <FullPath>symbolVsIndex.rdl</FullPath>
+    </ProjectItem>
   </Reports>
   <Configurations>
     <Configuration>
