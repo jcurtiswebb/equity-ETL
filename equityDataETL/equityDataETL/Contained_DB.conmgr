@@ -1,0 +1,14 @@
+﻿<?xml version="1.0"?>
+<DTS:ConnectionManager xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:ObjectName="Contained_DB"
+  DTS:DTSID="{C80E04BF-BF3C-4F7E-8EF9-5C70D5E452DD}"
+  DTS:CreationName="OLEDB">
+  <DTS:ObjectData>
+    <DTS:ConnectionManager
+      DTS:ConnectionString="Data Source=LAPTOP-1BA8UEN8;User ID=ETLoperator;Initial Catalog=YahooFinData;Provider=SQLNCLI11.1;Persist Security Info=True;Auto Translate=False;">
+      <DTS:Password
+        DTS:Name="Password"
+        Sensitive="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAYCnML7bj9EmqpgXXLdCucgAAAAACAAAAAAAQZgAAAAEAACAAAACkuVJ//pOVgxP9/dRhJJMBtY5mXhqDjy6J7c7ELkTLEgAAAAAOgAAAAAIAACAAAAC6cjfgzPHFNVJ4Lb9Za9ytqgVnp1TC+5akkzhK585dMIAAAAAG/wZ79LMQOeY9UDy4eY3THpErb3xcvSq47SBSfC1M7wseeMfYnPE/WwKCaXtOtTAtOUNTu/F8n8phoEI+A/2EsiASRmD2SIHugxUXzb9Dq1da0jZLkXZSoXzfaBS7W5xJU2McRm147Gy9LiNHMeNPSQpUqPo6Ua7A8OmEGgFKNkAAAAAVkwrTYnKwcQ8fXwlIS131I0E346XWQ/aO0SXXFBHWoF838t7qrrOMpVkt9cXcN3U+5LKbAjgFgLx1gy7NF/Pv</DTS:Password>
+    </DTS:ConnectionManager>
+  </DTS:ObjectData>
+</DTS:ConnectionManager>

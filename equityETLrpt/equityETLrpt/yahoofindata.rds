@@ -2,9 +2,7 @@
 <RptDataSource xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="yahoofindata">
   <ConnectionProperties>
     <Extension>SQL</Extension>
-    <ConnectString>Data Source=JOSH-PC\SQL16;Initial Catalog=YahooFinData</ConnectString>
-    <IntegratedSecurity>true</IntegratedSecurity>
-    <Prompt>Specify a user name and password for data source yahoofindata</Prompt>
+    <ConnectString>Data Source=LAPTOP-1BA8UEN8;Initial Catalog=YahooFinData</ConnectString>
   </ConnectionProperties>
   <DataSourceID>3a24626d-49fb-44bd-9abc-794543567c95</DataSourceID>
 </RptDataSource>

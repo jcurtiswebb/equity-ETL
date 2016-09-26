@@ -3,12 +3,24 @@
   <Items>
     <LogicalFolder Name="Connections" Type="2" Sorted="true">
       <Items>
-        <ConnectionNode Name="JOSH-PC\SQL16:Josh-PC\Josh">
-          <Created>2016-09-07T08:49:19.2872442-04:00</Created>
+        <ConnectionNode Name="LAPTOP-1BA8UEN8:LAPTOP-1BA8UEN8\jcurt">
+          <Created>2016-09-25T06:52:22.1638313-04:00</Created>
           <Type>SQL</Type>
-          <Server>JOSH-PC\SQL16</Server>
+          <Server>LAPTOP-1BA8UEN8</Server>
           <UserName />
           <Authentication>Windows Authentication</Authentication>
+          <InitialDB />
+          <LoginTimeout>15</LoginTimeout>
+          <ExecutionTimeout>0</ExecutionTimeout>
+          <ConnectionProtocol>NotSpecified</ConnectionProtocol>
+          <ApplicationName />
+        </ConnectionNode>
+        <ConnectionNode Name="LAPTOP-1BA8UEN8:Operator">
+          <Created>2016-09-25T08:53:03.5092413-04:00</Created>
+          <Type>SQL</Type>
+          <Server>LAPTOP-1BA8UEN8</Server>
+          <UserName>Operator</UserName>
+          <Authentication>SQL</Authentication>
           <InitialDB />
           <LoginTimeout>15</LoginTimeout>
           <ExecutionTimeout>0</ExecutionTimeout>
@@ -20,14 +32,14 @@
     <LogicalFolder Name="Queries" Type="0" Sorted="true">
       <Items>
         <FileNode Name="Database_Initialization.sql">
-          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:JOSH-PC\SQL16:True</AssociatedConnectionMoniker>
-          <AssociatedConnSrvName>JOSH-PC\SQL16</AssociatedConnSrvName>
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:LAPTOP-1BA8UEN8:True</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>LAPTOP-1BA8UEN8</AssociatedConnSrvName>
           <AssociatedConnUserName />
           <FullPath>Database_Initialization.sql</FullPath>
         </FileNode>
         <FileNode Name="Table_Initialization.sql">
-          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:JOSH-PC\SQL16:True</AssociatedConnectionMoniker>
-          <AssociatedConnSrvName>JOSH-PC\SQL16</AssociatedConnSrvName>
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:LAPTOP-1BA8UEN8:True</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>LAPTOP-1BA8UEN8</AssociatedConnSrvName>
           <AssociatedConnUserName />
           <FullPath>Table_Initialization.sql</FullPath>
         </FileNode>

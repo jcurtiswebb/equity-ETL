@@ -2,7 +2,7 @@
 <BuildLog xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <ProjectInfo>
     <Name>equityDataETL</Name>
-    <LastWriteTime>2016-09-18T22:57:59.7835651Z</LastWriteTime>
+    <LastWriteTime>2016-09-26T01:15:06.9290012Z</LastWriteTime>
     <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
   </ProjectInfo>
   <LastBuildInfos>
@@ -13,22 +13,22 @@
     </ProjectBuildItemInfo>
     <ProjectBuildItemInfo>
       <Name>yahooDataLoad.dtsx</Name>
-      <LastWriteTime>2016-09-16T18:11:14.5609025Z</LastWriteTime>
+      <LastWriteTime>2016-09-26T00:21:54.8708824Z</LastWriteTime>
       <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
     </ProjectBuildItemInfo>
     <ProjectBuildItemInfo>
       <Name>divGrowthUpdate.dtsx</Name>
-      <LastWriteTime>2016-09-18T20:07:12.9167336Z</LastWriteTime>
+      <LastWriteTime>2016-09-26T01:06:13.1579926Z</LastWriteTime>
       <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
     </ProjectBuildItemInfo>
     <ProjectBuildItemInfo>
       <Name>betaUpdate.dtsx</Name>
-      <LastWriteTime>2016-09-18T22:20:32.3064106Z</LastWriteTime>
+      <LastWriteTime>2016-09-26T01:08:22.0873808Z</LastWriteTime>
       <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
     </ProjectBuildItemInfo>
     <ProjectBuildItemInfo>
       <Name>Valuation.dtsx</Name>
-      <LastWriteTime>2016-09-18T22:59:11.5303856Z</LastWriteTime>
+      <LastWriteTime>2016-09-26T01:14:57.0376125Z</LastWriteTime>
       <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
     </ProjectBuildItemInfo>
   </LastBuildInfos>
