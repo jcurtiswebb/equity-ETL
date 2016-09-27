@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="Valuation"
   DTS:PackageType="5"
-  DTS:VersionBuild="5"
-  DTS:VersionGUID="{ADC05761-CFD0-47D5-9D61-2E1D7E9D32EC}">
+  DTS:VersionBuild="25"
+  DTS:VersionGUID="{17756A79-BD42-4280-AF38-DF59CEF50BCF}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -27,7 +27,7 @@
           <DTS:Password
             DTS:Name="Password"
             Sensitive="1"
-            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAYCnML7bj9EmqpgXXLdCucgAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAABv+16Iv4DpWxIGDlFk6OV8VDL8aSg3Fo875oQaiUx2VgAAAAAOgAAAAAIAACAAAACJf9dDf5cJ2GRgrO4XHvjzhGt7X6yO7EDwmeDmMFu5yyAAAAD0uY++HBdecETbpAhbiKgpdKJe1A3oo7sDAIMi9ZGoFEAAAABEgp9EooPl34qmJ9IBaseI1hK1oPXzKyDDtl1cSX6NXQ7HfvmRlSvqCZGAEfMdMaLW904wfQvhGD1k2zE+4WZA</DTS:Password>
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAYCnML7bj9EmqpgXXLdCucgAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAAARBhb0lLDt4zWjKCvv0ZpmVZ1W/ZTga1lgo9mSVmTAogAAAAAOgAAAAAIAACAAAACBjbMOwYvE7BQ1r+Xf52c6LGysqlMQJ82wwHokDw5bByAAAACYYiA7H2diC3lL7BdgKwDXHEQOBsTZP9wbC5PaWMSSnUAAAADHS2qgIoOOGWeVZSpQcE6PoqjDW/5b06OwKbtScLa9un3zrPWCAymzUZwoHunxL2iXap3Nd8U5FQPcXszyX8CP</DTS:Password>
         </DTS:ConnectionManager>
       </DTS:ObjectData>
     </DTS:ConnectionManager>
@@ -48,7 +48,7 @@
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
           SQLTask:Connection="{7ED2EB52-9EEA-4A32-B7AD-306421FD489A}"
-          SQLTask:SqlStatementSource="&#x9;DECLARE @rateaboveriskfree AS smallmoney = 0.08;&#xA;&#x9;DECLARE @riskfree AS smallmoney = 0.005;&#xA;&#xA;UPDATE N2&#xA;&#x9;&#x9;SET N2.Valuation = ROUND((N1.divgrowth+1),3)*ROUND(N1.dividend,3)/((@riskfree + @rateaboveriskfree)*ROUND(N1.Beta,3) - ROUND(N1.divgrowth,3))&#xA;&#x9;FROM YahooFinData.dbo.FactReport AS N2&#xA;&#x9;&#x9;INNER JOIN YahooFinData.dbo.FactReport AS N1&#xA;&#x9;&#x9;&#x9;ON N1.symID = N2.symID&#xA;&#x9;&#x9;&#x9;AND N1.yearID = N2.yearID&#xA;&#x9;&#x9;&#x9;AND N1.repType = n2.repType&#xA;&#x9;WHERE N1.repType = 1&#xA;&#x9;&#x9;AND ((@riskfree + @rateaboveriskfree)*N1.Beta - N1.divgrowth) &gt; 0"
+          SQLTask:SqlStatementSource="&#x9;DECLARE @rateaboveriskfree AS smallmoney = 0.18;&#xA;&#x9;DECLARE @riskfree AS smallmoney = 0.005;&#xA;WITH N1 AS&#xA;(&#xA;&#x9;SELECT A.symID, A.yearID, A.reptype, A.dividend, A.valuation, A.beta, &#xA;&#x9;(SELECT AVG(divGrowth) FROM YahooFinData.dbo.factReport AS B WHERE A.symID = B.symID AND A.repType=B.repType AND B.yearID &lt; = A.yearID) AS divGrowth&#xA;&#x9;FROM YahooFinData.dbo.factReport AS A&#xA;&#x9;WHERE reptype=1&#xA;)&#xA;UPDATE N2&#xA;&#x9;&#x9;SET N2.Valuation = ROUND((N1.divgrowth+1),3)*ROUND(N1.dividend,3)/(@riskfree + @rateaboveriskfree*ROUND(N1.Beta,3) - ROUND(N1.divgrowth,3))&#xA;&#x9;FROM YahooFinData.dbo.FactReport AS N2&#xA;&#x9;&#x9;INNER JOIN  N1&#xA;&#x9;&#x9;&#x9;ON N1.symID = N2.symID&#xA;&#x9;&#x9;&#x9;AND N1.yearID = N2.yearID&#xA;&#x9;&#x9;&#x9;AND N1.repType = n2.repType&#xA;&#x9;&#x9;WHERE (@riskfree + @rateaboveriskfree*ROUND(N1.Beta,3) - ROUND(N1.divgrowth,3)) &lt;&gt; 0"
           SQLTask:ServerVersion="9"
           SQLTask:ExtendedLogging="True"
           SQLTask:LocalConnectionForLogging=""

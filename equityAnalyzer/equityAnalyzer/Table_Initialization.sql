@@ -23,15 +23,7 @@ CREATE TABLE dbo.dimDate
 	[quarter] AS DATEPART(QUARTER, [date]) PERSISTED
 )
 
-CREATE TABLE stg.factPrice
-(
-	symID INT FOREIGN KEY REFERENCES dbo.dimSymbol(symID) NOT NULL,
-	dateID INT FOREIGN KEY REFERENCES dbo.dimDate(dateID) NOT NULL,
-	closePrice DECIMAL(9,2) NOT NULL,
-	volume BIGINT NOT NULL,
-	adjClosePrice MONEY NOT NULL,
-	dayGain DECIMAL(9,5) NULL
-)
+
 
 CREATE TABLE dbo.factPrice
 (
@@ -72,7 +64,7 @@ CREATE TABLE dbo.factReport
 	yearID TINYINT FOREIGN KEY REFERENCES dbo.dimYear(yearID) NOT NULL,
 	amend BIT NOT NULL,
 	repType BIT NOT NULL,
-	[quarter] VARCHAR(2) NULL,
+	[quarter] VARCHAR(2) NOT NULL,
 	revenues BIGINT null,	
 	opIncome BIGINT null,	
 	netIncome	BIGINT null,
@@ -89,7 +81,8 @@ CREATE TABLE dbo.factReport
 	cashFlowFin BIGINT null,
 	divGrowth DECIMAL(9,4) null,
 	valuation DECIMAL(9,2) null,
-	beta DECIMAL(9,4) null
+	beta DECIMAL(9,4) null,
+	CONSTRAINT pk_report PRIMARY KEY (symID, yearID, amend, reptype, [quarter]) WITH (IGNORE_DUP_KEY = ON)
 )
 
 

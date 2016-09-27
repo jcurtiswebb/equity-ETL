@@ -289,6 +289,7 @@ ORDER BY factReport.yearID DESC</CommandText>
                         <Style>None</Style>
                       </Border>
                       <FontSize>8pt</FontSize>
+                      <Format>yyyy</Format>
                       <Color>#5c5c5c</Color>
                     </Style>
                     <ChartAxisTitle>
@@ -298,6 +299,7 @@ ORDER BY factReport.yearID DESC</CommandText>
                         <Color>#5c5c5c</Color>
                       </Style>
                     </ChartAxisTitle>
+                    <Margin>True</Margin>
                     <ChartMajorGridLines>
                       <Enabled>False</Enabled>
                       <Style>
@@ -321,6 +323,7 @@ ORDER BY factReport.yearID DESC</CommandText>
                           <Style>None</Style>
                         </Border>
                       </Style>
+                      <IntervalType>Auto</IntervalType>
                     </ChartMajorTickMarks>
                     <ChartMinorTickMarks>
                       <Style>
@@ -517,7 +520,8 @@ ORDER BY factReport.yearID DESC</CommandText>
                   <BackgroundGradientType>None</BackgroundGradientType>
                   <FontSize>8pt</FontSize>
                 </Style>
-                <Position>TopLeft</Position>
+                <Position>TopCenter</Position>
+                <DockOutsideChartArea>true</DockOutsideChartArea>
                 <ChartLegendTitle>
                   <Caption />
                   <Style>
@@ -544,7 +548,6 @@ ORDER BY factReport.yearID DESC</CommandText>
                 <Position>TopLeft</Position>
               </ChartTitle>
             </ChartTitles>
-            <Palette>Pacific</Palette>
             <ChartBorderSkin>
               <ChartBorderSkinType>Sunken</ChartBorderSkinType>
               <Style>
@@ -565,7 +568,7 @@ ORDER BY factReport.yearID DESC</CommandText>
             <DataSetName>PriceGraph</DataSetName>
             <Top>1.17584in</Top>
             <Left>0.02778in</Left>
-            <Height>2.23264in</Height>
+            <Height>3.07985in</Height>
             <Width>7.32514in</Width>
             <Style>
               <Border>
@@ -934,7 +937,7 @@ ORDER BY factReport.yearID DESC</CommandText>
               </Style>
             </ChartNoDataMessage>
             <DataSetName>dividendGrowth</DataSetName>
-            <Top>3.43625in</Top>
+            <Top>4.31125in</Top>
             <Left>0.01389in</Left>
             <Height>2in</Height>
             <Width>3.75222in</Width>
@@ -1309,7 +1312,7 @@ ORDER BY factReport.yearID DESC</CommandText>
               </Style>
             </ChartNoDataMessage>
             <DataSetName>DividendPayout</DataSetName>
-            <Top>3.43625in</Top>
+            <Top>4.31125in</Top>
             <Left>3.82167in</Left>
             <Height>2in</Height>
             <Width>3.51736in</Width>
@@ -1334,7 +1337,8 @@ ORDER BY factReport.yearID DESC</CommandText>
                     <Value>=First(Fields!name.Value, "StockName")</Value>
                     <Style>
                       <FontFamily>Tahoma</FontFamily>
-                      <FontSize>14pt</FontSize>
+                      <FontSize>16pt</FontSize>
+                      <FontWeight>Bold</FontWeight>
                     </Style>
                   </TextRun>
                 </TextRuns>
@@ -1343,9 +1347,9 @@ ORDER BY factReport.yearID DESC</CommandText>
             </Paragraphs>
             <rd:DefaultName>Textbox1</rd:DefaultName>
             <Top>0.12375in</Top>
-            <Left>0.22792in</Left>
+            <Left>0.28694in</Left>
             <Height>0.32292in</Height>
-            <Width>3.8125in</Width>
+            <Width>3.87848in</Width>
             <ZIndex>3</ZIndex>
             <Style>
               <Border>
@@ -1629,7 +1633,7 @@ ORDER BY factReport.yearID DESC</CommandText>
             </Style>
           </GaugePanel>
         </ReportItems>
-        <Height>6.24528in</Height>
+        <Height>6.31125in</Height>
         <Style />
       </Body>
       <Width>7.35292in</Width>

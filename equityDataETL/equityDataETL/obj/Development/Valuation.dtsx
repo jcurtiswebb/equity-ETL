@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="Valuation"
   DTS:PackageType="5"
-  DTS:VersionBuild="4"
-  DTS:VersionGUID="{07E877E3-71CD-4055-83E4-B8AC04770E71}">
+  DTS:VersionBuild="25"
+  DTS:VersionGUID="{17756A79-BD42-4280-AF38-DF59CEF50BCF}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -27,18 +27,8 @@
           <DTS:Password
             DTS:Name="Password"
             Sensitive="1"
-            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAYCnML7bj9EmqpgXXLdCucgAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAAAhH7ycdqeAJqA4z2y6Qjg0XDVPHXBG+Bro2I541lBolgAAAAAOgAAAAAIAACAAAADIEVSbZedw9RZWV5dDorMdbLcH8E5myoAQGaC9Wnoc6yAAAAABUyZexPm4nyDCMkiUVZoeNq8brpJGVeA40YsF8pxirEAAAACmcFRSTEJ1Ir34bUdzac34rVA5yvDLyMbuIRKzouXZg863z0n5eh3KQ4+HIO1aFcrpLs5HpwTq7xotbS8aApXA</DTS:Password>
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAYCnML7bj9EmqpgXXLdCucgAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAACd1vAaY8Q+4lp/FJtJ26OL2JEmok4ghXLF23qX+KejnwAAAAAOgAAAAAIAACAAAABey0chnjol5ksW+LehCqV7N3TSF9alhEu2txKjAEqOXCAAAAB7qVUZ9UI+UP71wj46oITa9a4KbG53gjrn6umwOGPVuUAAAADyLawevwTebT9C/VE7YrYqH8wbBBoOtAv7XTj0Wajg60xpAzhQWr8qB8p2e6GK1s3U8qjaWpn4eZG+rFfR6dej</DTS:Password>
         </DTS:ConnectionManager>
-      </DTS:ObjectData>
-    </DTS:ConnectionManager>
-    <DTS:ConnectionManager
-      DTS:refId="Package.ConnectionManagers[SQL16]"
-      DTS:CreationName="ADO.NET:SQL"
-      DTS:DTSID="{98C226E2-597F-4C8E-AD0B-45F7310B55FB}"
-      DTS:ObjectName="SQL16">
-      <DTS:ObjectData>
-        <DTS:ConnectionManager
-          DTS:ConnectionString="Data Source=JOSH-PC\SQL16;Integrated Security=SSPI;Connect Timeout=30;" />
       </DTS:ObjectData>
     </DTS:ConnectionManager>
   </DTS:ConnectionManagers>
@@ -58,7 +48,7 @@
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
           SQLTask:Connection="{7ED2EB52-9EEA-4A32-B7AD-306421FD489A}"
-          SQLTask:SqlStatementSource="&#x9;DECLARE @rateaboveriskfree AS smallmoney = 0.08;&#xA;&#x9;DECLARE @riskfree AS smallmoney = 0.005;&#xA;&#xA;UPDATE N2&#xA;&#x9;&#x9;SET N2.Valuation = ROUND((N1.divgrowth+1),3)*ROUND(N1.dividend,3)/((@riskfree + @rateaboveriskfree)*ROUND(N1.Beta,3) - ROUND(N1.divgrowth,3))&#xA;&#x9;FROM YahooFinData.dbo.FactReport AS N2&#xA;&#x9;&#x9;INNER JOIN YahooFinData.dbo.FactReport AS N1&#xA;&#x9;&#x9;&#x9;ON N1.symID = N2.symID&#xA;&#x9;&#x9;&#x9;AND N1.yearID = N2.yearID&#xA;&#x9;&#x9;&#x9;AND N1.repType = n2.repType&#xA;&#x9;WHERE N1.repType = 1&#xA;&#x9;&#x9;AND ((@riskfree + @rateaboveriskfree)*N1.Beta - N1.divgrowth) &gt; 0"
+          SQLTask:SqlStatementSource="&#x9;DECLARE @rateaboveriskfree AS smallmoney = 0.18;&#xA;&#x9;DECLARE @riskfree AS smallmoney = 0.005;&#xA;WITH N1 AS&#xA;(&#xA;&#x9;SELECT A.symID, A.yearID, A.reptype, A.dividend, A.valuation, A.beta, &#xA;&#x9;(SELECT AVG(divGrowth) FROM YahooFinData.dbo.factReport AS B WHERE A.symID = B.symID AND A.repType=B.repType AND B.yearID &lt; = A.yearID) AS divGrowth&#xA;&#x9;FROM YahooFinData.dbo.factReport AS A&#xA;&#x9;WHERE reptype=1&#xA;)&#xA;UPDATE N2&#xA;&#x9;&#x9;SET N2.Valuation = ROUND((N1.divgrowth+1),3)*ROUND(N1.dividend,3)/(@riskfree + @rateaboveriskfree*ROUND(N1.Beta,3) - ROUND(N1.divgrowth,3))&#xA;&#x9;FROM YahooFinData.dbo.FactReport AS N2&#xA;&#x9;&#x9;INNER JOIN  N1&#xA;&#x9;&#x9;&#x9;ON N1.symID = N2.symID&#xA;&#x9;&#x9;&#x9;AND N1.yearID = N2.yearID&#xA;&#x9;&#x9;&#x9;AND N1.repType = n2.repType&#xA;&#x9;&#x9;WHERE (@riskfree + @rateaboveriskfree*ROUND(N1.Beta,3) - ROUND(N1.divgrowth,3)) &lt;&gt; 0"
           SQLTask:ServerVersion="9"
           SQLTask:ExtendedLogging="True"
           SQLTask:LocalConnectionForLogging=""
