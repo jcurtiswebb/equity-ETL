@@ -1,5 +1,5 @@
 # equity-ETL
-Download Yahoo Finance API data into a SQL Server Database and run customizable reports.<br>
+Download Yahoo Finance API data into a SQL Server Database and run customizable reports in SSRS.<br>
 <p align="center">
   <img src="http://jcurtiswebb.com/blog/wp-content/uploads/2016/09/3M_Report.jpg" alt="MMM report">
 </p>
