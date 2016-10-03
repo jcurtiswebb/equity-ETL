@@ -2,13 +2,13 @@
 <BuildLog xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <ProjectInfo>
     <Name>equityDataETL</Name>
-    <LastWriteTime>2016-09-26T01:17:09.7383418Z</LastWriteTime>
+    <LastWriteTime>2016-10-03T15:55:31.7839658Z</LastWriteTime>
     <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
   </ProjectInfo>
   <LastBuildInfos>
     <ProjectBuildItemInfo>
       <Name>pystock-load.dtsx</Name>
-      <LastWriteTime>2016-09-16T15:52:06.5956818Z</LastWriteTime>
+      <LastWriteTime>2016-10-03T15:56:24.6757948Z</LastWriteTime>
       <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
     </ProjectBuildItemInfo>
     <ProjectBuildItemInfo>
@@ -29,6 +29,11 @@
     <ProjectBuildItemInfo>
       <Name>Valuation.dtsx</Name>
       <LastWriteTime>2016-09-27T20:18:45.6671691Z</LastWriteTime>
+      <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
+    </ProjectBuildItemInfo>
+    <ProjectBuildItemInfo>
+      <Name>symbolDataDownload.dtsx</Name>
+      <LastWriteTime>2016-10-03T00:20:20.0764705Z</LastWriteTime>
       <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
     </ProjectBuildItemInfo>
   </LastBuildInfos>

@@ -4,7 +4,7 @@
     <Configuration>
       <Name>Development</Name>
       <Options>
-        <ServerName>JOSH-PC\SQL16</ServerName>
+        <ServerName>LAPTOP-1BA8UEN8</ServerName>
         <PathOnServer>/SSISDB/equityDataETL/equityDataETL</PathOnServer>
         <Run64BitRuntime>true</Run64BitRuntime>
         <UserIDs />
